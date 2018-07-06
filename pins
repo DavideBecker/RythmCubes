@@ -1,0 +1,11 @@
+1   GND     GND         
+2   VCC     3,3         
+
+3   CE      6 (AIN0)    
+4   CSN     7 (AIN1)    
+
+5   SCK     13 (SCK)    
+6   MOSI    11 (MOSI)   
+7   MISO    12 (MISO)
+
+8   IRQ     ---         

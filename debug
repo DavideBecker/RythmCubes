@@ -1,0 +1,12 @@
+  SerialPort.print("{ ");
+  SerialPort.print("\"acc\": { \"x\": " + String(accelX) + ", \"y\": " + String(accelY) + ", \"z\": " + String(accelZ) + " }, ");
+  SerialPort.print("\"gyro\": { \"x\": " + String(gyroX) + ", \"y\": " + String(gyroX) + ", \"z\": " + String(gyroX) + " }, ");
+  SerialPort.print("\"mag\": { \"x\": " + String(magX) + ", \"y\": " + String(magY) + ", \"z\": " + String(magZ) + " }");
+  SerialPort.println("}");
+
+
+    SerialPort.println(String(imu.ax) + " - " + String(imu.ay) + " - " + String(imu.az));
+
+    //SerialPort.println(String(imu.qw) + " - " + String(imu.qx) + " - " + String(imu.qy) + " - " + String(imu.qz));
+    //SerialPort.println(String(q0) + " - " + String(q1) + " - " + String(q2) + " - " + String(q3));
+    //SerialPort.println(String(imu.yaw) + " - " + String(imu.pitch) + " - " + String(imu.roll));
