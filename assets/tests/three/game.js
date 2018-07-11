@@ -1,5 +1,6 @@
 function drawCubes() {
-    player.position.x = mouse.x * 4
+    // player.position.x = mouse.x * 4
+    player.position.x = trackX
 
     for (var i = 0; i < cubes.length; i++) {
         var c = cubes[i]
@@ -26,7 +27,7 @@ function pushNotes(sequence) {
 }
 
 function updateScore() {
-    scoreElement.innerHTML = 'Score: ' + score
+    // scoreElement.innerHTML = 'Score: ' + score
 }
 
 function handleKeys() {
@@ -71,10 +72,10 @@ document.addEventListener('keyup', function (event) {
     }
 })
 
-document.addEventListener('mousemove', function (event) {
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-})
+// document.addEventListener('mousemove', function (event) {
+//     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+//     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+// })
 
 function update(d) {
     delta = d
