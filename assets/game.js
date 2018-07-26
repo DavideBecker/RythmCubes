@@ -9,8 +9,14 @@ function drawCubes() {
 
         if (c.mesh.position.y < 0) {
             if (c.mesh.visible) {
-                synth.triggerAttackRelease(tones[c.lane], "8n");
-                score++;
+                if (Math.abs(c.mesh.position.x - player.position.x) <= 1) {
+                    synth.triggerAttackRelease(tones[c.lane], "8n");
+                    score++;
+                    highScore = Math.max(score, highScore)
+                } else {
+                    score = Math.max(score - 1, 0);
+                }
+                updateScore()
                 // synth.triggerAttackRelease(c.pitch * 5 + 500, c.duration / 100 );
             }
             c.spawn(cubeGrid.height);
@@ -20,14 +26,14 @@ function drawCubes() {
 
 function pushNotes(sequence) {
     patternBacklog = patternBacklog.concat(sequence.notes)
-    console.log(patternBacklog)
     // for(var note of sequence.notes) {
 
     // }
 }
 
 function updateScore() {
-    // scoreElement.innerHTML = 'Score: ' + score
+    scoreElement.innerHTML = 'Score: ' + score + '<br>' + 'High Score: ' +
+        highScore
 }
 
 function handleKeys() {
@@ -60,13 +66,13 @@ function handleKeys() {
 
 var keysPressed = {}
 
-document.addEventListener('keydown', function (event) {
+document.addEventListener('keydown', function(event) {
     if (!event.repeat) {
         keysPressed[event.code] = true
     }
 })
 
-document.addEventListener('keyup', function (event) {
+document.addEventListener('keyup', function(event) {
     if (!event.repeat) {
         keysPressed[event.code] = false
     }
@@ -78,8 +84,13 @@ document.addEventListener('keyup', function (event) {
 // })
 
 function update(d) {
+    if (!isRunning)
+        return
+
     delta = d
-    handleKeys()
+    if (debugging) {
+        handleKeys()
+    }
     drawCubes()
 
     // if (patternBacklog.length < 10 && !generatingNotes) {
@@ -89,9 +100,7 @@ function update(d) {
     // }
 
     cubeProbability = Math.min(cubeProbability + 0.00002, 0.5)
-    cubeSpeed = Math.min(cubeSpeed +  0.0000025, 0.04)
-
-    updateScore()
+    cubeSpeed = Math.min(cubeSpeed + 0.0000025, 0.04)
 }
 
 function draw() {
@@ -119,3 +128,8 @@ function init() {
 init()
 
 MainLoop.setUpdate(update).setDraw(draw).start()
+
+document.getElementById('intro').addEventListener('click', function() {
+    this.remove()
+    isRunning = true
+})

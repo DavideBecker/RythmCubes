@@ -20,7 +20,7 @@ function drawCubes() {
 
 function pushNotes(sequence) {
     patternBacklog = patternBacklog.concat(sequence.notes)
-    console.log(patternBacklog)
+    // console.log(patternBacklog)
     // for(var note of sequence.notes) {
 
     // }

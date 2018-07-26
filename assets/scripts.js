@@ -83,7 +83,7 @@ function onColorMove(event) {
             rect.color = tracker.customColor;
         }
 
-        console.log(rect)
+        // console.log(rect)
 
         context.strokeStyle = rect.color;
         context.strokeRect(rect.x, rect.y, rect.width, rect.height);

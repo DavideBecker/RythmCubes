@@ -26,7 +26,7 @@ const playOnce = () => {
   };  
   
   document.getElementById('message').innerText = 'Improvising over: ' + chords;
-  console.log(JSON.stringify(seq), STEPS_PER_PROG + (NUM_REPS-1)*STEPS_PER_PROG - 1, 0.9, JSON.stringify(chords))
+  // console.log(JSON.stringify(seq), STEPS_PER_PROG + (NUM_REPS-1)*STEPS_PER_PROG - 1, 0.9, JSON.stringify(chords))
   model.continueSequence(seq, STEPS_PER_PROG + (NUM_REPS-1)*STEPS_PER_PROG - 1, 0.9, chords)
     .then((contSeq) => {
       // Add the continuation to the original.

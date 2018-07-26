@@ -20,7 +20,7 @@ window.onload = function () {
     analyser.fftSize = 256;
 
     var bufferLength = analyser.frequencyBinCount;
-    console.log(bufferLength);
+    // console.log(bufferLsength);
 
     var dataArray = new Uint8Array(bufferLength);
 
@@ -44,7 +44,7 @@ window.onload = function () {
         for (var i = 0; i < bufferLength; i++) {
             barHeight = dataArray[i];
             if(barHeight >= 250)
-                console.log('spawn')
+                // console.log('spawn')
 
             var r = barHeight + (25 * (i / bufferLength));
             var g = 250 * (i / bufferLength);

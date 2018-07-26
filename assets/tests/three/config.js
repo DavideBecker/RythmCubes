@@ -12,7 +12,7 @@ var cubeSpeed = 0.01
 var cubeProbability = 0.2
 
 var score = 0
-var scoreElement = document.getElementById('score')
+// var scoreElement = document.getElementById('score')
 
 var generatingNotes = false
 var generatedNotes = []

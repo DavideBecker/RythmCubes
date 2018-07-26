@@ -9,6 +9,8 @@ function onColorMove(event) {
     var maxRect;
     var maxRectArea = 0;
 
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
     event.data.forEach(function(rect) {
         if (rect.width * rect.height > maxRectArea) {
             maxRectArea = rect.width * rect.height;
@@ -18,8 +20,6 @@ function onColorMove(event) {
         if (rect.color === 'custom') {
             rect.color = tracker.customColor;
         }
-
-        console.log(rect)
 
         context.strokeStyle = rect.color;
         context.strokeRect(rect.x, rect.y, rect.width, rect.height);

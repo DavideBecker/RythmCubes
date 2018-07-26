@@ -8,11 +8,18 @@ var cubeGrid = {
     height: cubeAmount * cubeSpacing
 }
 
+var debugging = false
+var isRunning = false
+
 var cubeSpeed = 0.01
 var cubeProbability = 0.2
 
 var score = 0
+var highScore = 0
 var scoreElement = document.getElementById('score')
+
+var canvas = document.getElementById('debugCanvas');
+var context = canvas.getContext('2d');
 
 var generatingNotes = false
 var generatedNotes = []

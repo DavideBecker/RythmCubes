@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="./assets/vendor/socket.io.js"></script>
+    <!-- <script src="./assets/vendor/socket.io.js"></script> -->
     <script src='./assets/vendor/tone.js'></script>
     <script src='./assets/vendor/three.js'></script>
     <script src="./assets/vendor/tracking.js"></script>
@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
-    
+    <div id="intro">This game uses everyday objects as your controller. <br>Find something magenta and start collecting the cubes. <br>A post-it or textmarker works well.<br>Click to start playing!</div>
+    <div id="score">Score: 0<br>High Score: 0</div>
     <video id="video" width="320" height="240" preload autoplay loop muted></video>
     <canvas id="debugCanvas" width="320" height="240"></canvas>
     <!-- <script src="./assets/scripts.js"></script> -->
