@@ -13,10 +13,14 @@ var isRunning = false
 
 var cubeSpeed = 0.01
 var cubeProbability = 0.2
+var healthModifierProbablility = 0.2
 
 var score = 0
 var highScore = 0
+var health = 3
+var currentHealth = 0
 var scoreElement = document.getElementById('score')
+var gameOverElement = document.getElementById('game-over')
 
 var canvas = document.getElementById('debugCanvas');
 var context = canvas.getContext('2d');
@@ -43,16 +47,10 @@ var synth = new Tone.MembraneSynth({
 }).toMaster();
 // var synth = new Tone.PolySynth(6, Tone.Synth).toMaster()
 // synth.set("detune", -1200);
-var backgroundSynth = new Tone.MetalSynth({
-    noise: {
-        type: "white"
-    },
-    envelope: {
-        attack: .005,
-        decay: .05,
-        sustain: .1,
-        release: .4
-    }
+var backgroundSynth = new Tone.PluckSynth({
+    attackNoise: 1,
+    dampening: 4000,
+    resonance: 0.7
 }).toMaster()
 
 //Helpers

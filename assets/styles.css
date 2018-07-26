@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 #video, #debugCanvas {
@@ -18,9 +20,10 @@
   background-color: #FFF;
   color: #FF007A;
   font-size: 22px;
+  line-height: 1.5em;
 }
 
-#intro {
+#intro, #game-over {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -33,5 +36,10 @@
   font-size: 22px;
   font-family: "Helvetica", "Lato", "Arial", sans-serif;
   text-align: center;
+}
+
+#game-over {
+  font-size: 32px;
+  display: none;
 }
 /*# sourceMappingURL=styles.css.map */
