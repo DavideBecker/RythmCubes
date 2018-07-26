@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/92/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tracking.js/1.1.3/tracking-min.js"></script>
-    <script src="./assets/quat.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-    </style>
+    <script src="./assets/vendor/socket.io.js"></script>
+    <script src='./assets/vendor/tone.js'></script>
+    <script src='./assets/vendor/three.js'></script>
+    <script src="./assets/vendor/tracking.js"></script>
+    <script src="./assets/vendor/mainloop.js"></script>
+    <!-- <script src="./assets/vendor/quat.js"></script> -->
+
+    <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
     
     <video id="video" width="320" height="240" preload autoplay loop muted></video>
-    <canvas id="debugCanvas" width="320" height="240" style="position: absolute; top: 0; left: 0"></canvas>
-    <script src="./assets/scripts.js"></script>
+    <canvas id="debugCanvas" width="320" height="240"></canvas>
+    <!-- <script src="./assets/scripts.js"></script> -->
+    <script src="./assets/config.js"></script>
+    <!-- <script src="./assets/generativeNotes.js"></script> -->
+    <script src="./assets/functions.js"></script>
+    <script src="./assets/objects.js"></script>
+    <script src="./assets/tracking.js"></script>
+    <script src="./assets/scene.js"></script>
+    <script src="./assets/game.js"></script>
 </body>
 </html>
