@@ -16,7 +16,7 @@ var cubeProbability = 0.2
 var healthModifierProbablility = 0.2
 
 var score = 0
-var highScore = 0
+var highScore = localStorage.getItem('rythmCubesScore') || 0
 var health = 3
 var currentHealth = 0
 var scoreElement = document.getElementById('score')
@@ -30,6 +30,8 @@ var generatedNotes = []
 var patternBacklog = []
 var skippedNotes = 0
 var tones = ["D2", "E2", "F#2", "A2", "B2"]
+
+var stars = []
 
 var synth = new Tone.MembraneSynth({
     pitchDecay: 0.05,

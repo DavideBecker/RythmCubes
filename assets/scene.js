@@ -3,7 +3,8 @@
 //
 
 var scene = new THREE.Scene()
-scene.background = new THREE.Color(0x505050);
+// scene.background = new THREE.Color(0x505050);
+scene.background = new THREE.Color(0x000000);
 
 //
 /////////////////////////////////// CAMERAS
@@ -91,7 +92,7 @@ scene.add(room);
 //
 
 var playerMaterial = new THREE.MeshLambertMaterial({
-    color: 0xffffff
+    color: 0xFF007A
 })
 var player = new THREE.Mesh(geometry, playerMaterial)
 player.name = "Player"

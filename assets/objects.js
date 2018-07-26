@@ -27,9 +27,9 @@ class Cube {
         }
 
         if(this.type == 0) {
-            this.material.color.setHex(0xFF007A)
+            this.material.color.setHex(0x999999)
         } else if(this.type == 1) {
-            this.material.color.setHex(0x000000)
+            this.material.color.setHex(0xff0000)
         } else if(this.type == 2) {
             this.material.color.setHex(0x00ff00)
         }
