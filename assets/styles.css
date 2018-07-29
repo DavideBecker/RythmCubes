@@ -5,6 +5,11 @@
           box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+  cursor: none;
+}
+
 #video, #debugCanvas {
   position: absolute;
   top: 0;
