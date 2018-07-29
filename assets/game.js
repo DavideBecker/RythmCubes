@@ -34,7 +34,7 @@ function drawCubes() {
     for (var i = 0; i < cubes.length; i++) {
         var c = cubes[i]
 
-        c.mesh.position.y -= cubeSpeed * delta
+        c.mesh.position.y -= (cubeSpeed + speedModifier) * delta
 
         if (c.mesh.position.y < 0) {
             resetCube(c)
@@ -190,6 +190,11 @@ function init() {
     //     })
     // })
 
+    cubeSpeed = 0.01
+    speedModifier = 0
+    cubeProbability = 0.2
+    healthModifierProbablility = 0.2
+
     score = 0
     currentHealth = health
     updateScore()
@@ -220,3 +225,16 @@ document.getElementById('intro').addEventListener('click', function() {
     this.remove()
     isRunning = true
 })
+
+if(useMotionSensor) {
+    socket.on('sensorData', function(data) {
+        // console.log(cube.rotation.x, cube.rotation.y, cube.rotation.z)
+    
+        // madgwickAHRSupdate(data.gyro.x, data.gyro.y, data.gyro.z, data.acc.x, data.acc.y, data.acc.z, data.mag.x, data.mag.y, data.mag.z)
+        // quat.set(q0, q1, q2, q3)
+        // quat.set(-data.quat.y, data.quat.z, -data.quat.x, data.quat.w)
+        // cube.quaternion.copy(quat)
+        // console.log(data.acc.y)
+        speedModifier = (data.acc.y + 2) / 100
+    })
+}

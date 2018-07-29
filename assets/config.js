@@ -1,3 +1,5 @@
+var useMotionSensor = false
+
 var delta = 0
 
 var cubeLanes = 5
@@ -12,6 +14,7 @@ var debugging = false
 var isRunning = false
 
 var cubeSpeed = 0.01
+var speedModifier = 0
 var cubeProbability = 0.2
 var healthModifierProbablility = 0.2
 

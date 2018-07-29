@@ -2,6 +2,9 @@
 /////////////////////////////////// SCENE
 //
 
+if(useMotionSensor) {
+    var socket = io();
+}
 var scene = new THREE.Scene()
 // scene.background = new THREE.Color(0x505050);
 scene.background = new THREE.Color(0x000000);
