@@ -6,7 +6,9 @@ var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
-const port = new SerialPort('/dev/cu.usbmodem1411', {
+var activePort = process.argv[2] || '/dev/cu.usbmodem1411'
+
+const port = new SerialPort(activePort, {
     // baudRate: 38400
     baudRate: 115200
 });
